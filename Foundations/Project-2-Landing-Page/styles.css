@@ -1,0 +1,47 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #1F2937;
+    color: white;
+    padding: 12px 90px;
+    margin: 0px;
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.containers {
+    flex: 1;
+    border-style: solid;
+    border-color: red; 
+}
+
+.container-1,
+.container-2,
+.container-3,
+.container-4 {
+    height: 50px;
+    border-style: solid;
+    border-color: greenyellow;
+}
+
+.footer {
+    background-color: #1F2937;
+    color: white;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
