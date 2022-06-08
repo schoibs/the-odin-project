@@ -1,16 +1,16 @@
 body {
+    height: 100vh;
     margin: 0px;
-    padding: 0px;
     display: flex;
     flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .header {
     background-color: #1F2937;
     color: white;
-    padding: 12px 90px;
-    margin: 0px;
     height: 72px;
+    padding: 24px 200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,19 +22,117 @@ ul {
     gap: 24px;
 }
 
-.containers {
-    flex: 1;
-    border-style: solid;
-    border-color: red; 
+a {
+    color: white;
+    text-decoration: none;
 }
 
-.container-1,
-.container-2,
-.container-3,
-.container-4 {
-    height: 50px;
+.containers {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.container-1 {
+    height: 300px;
+    background-color: #1F2937;
+    color: white;
+    padding: 24px 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 72px;
+}
+
+.container-1-left {
+    height: 250px;
+    width: 500px;
+    background-color: #1F2937;
+    color: white;
+    padding: 0px;
+    justify-content: flex-start;
+}
+
+.container-1-left h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.container-1-left p {
+    font-size: 18px;
+    margin-top: 12px;
+}
+
+.container-1-left button {
+    background-color: #3882F6;
+    color: white;
+    padding: 8px 32px;
+    border-radius: 8%;
+}
+
+.container-1-right {
+    height: 250px;
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #989d99;
+}
+
+.container-2 {
+    height: 500px;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.container-2 h3 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 32px;
+}
+
+.container-2-infos {
+    display: flex;
+    gap: 48px;
+}
+
+.info {
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-box {
+    height: 150px;
+    width: 150px;
+    border-color: #3882F6;
     border-style: solid;
-    border-color: greenyellow;
+    border-radius: 12%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-3 {
+    height: 300px;
+    background-color: #E5E7EB;
+    color: black;
+}
+
+.container-4 {
+    height: 300px;
+    background-color: white;
+    color: black;
 }
 
 .footer {
