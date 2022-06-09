@@ -148,7 +148,40 @@ a {
 .container-4 {
     height: 300px;
     background-color: white;
-    color: black;
+    padding: 24px 200px;
+    display: flex;
+    align-items: center;
+}
+
+.container-4 .blue-box {
+    flex: 1;
+    color: white;
+    background-color: #3882F6;
+    padding: 60px 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.container-4 h3,
+.container-4 p {
+    margin: 0;
+}
+
+.container-4 h3 {
+    font-size: 24px;
+}
+
+.blue-box button {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    border-style: solid;
+    padding: 12px 48px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 12px;
 }
 
 .footer {
