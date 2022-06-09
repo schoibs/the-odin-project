@@ -127,6 +127,22 @@ a {
     height: 300px;
     background-color: #E5E7EB;
     color: black;
+    padding: 24px 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote {
+    font-size: 36px;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.container-3 .quote-by{
+    font-size: 24px;
+    align-self: flex-end;
 }
 
 .container-4 {
