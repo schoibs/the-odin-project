@@ -1,0 +1,27 @@
+body {
+    height: 100vh; 
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 35);
+}
+
+.buttons button {
+    background-color: transparent;
+    border: 5px solid #000000;
+    border-radius: 12px;
+    color: black;
+    height: 200px;
+    width: 200px;
+    margin: 32px 32px;
+    font-size: 32px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    border: 5px solid #ff0000;
+    color: #ff0000;
+}

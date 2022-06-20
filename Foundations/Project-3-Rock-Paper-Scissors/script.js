@@ -53,4 +53,4 @@ function game(){
     console.log(winner);
 }
 
-game();
+// game();
