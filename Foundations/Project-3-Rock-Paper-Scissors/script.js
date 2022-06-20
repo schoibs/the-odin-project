@@ -4,13 +4,14 @@ function capitalize(word){
 }
 
 function computerPlay(){
-    const choices = ["rock", "paper", "scissors"];
+    const choices = ['rock', 'paper', 'scissors'];
     return choices[Math.floor(Math.random()*choices.length)];
 }
 
 function playSingleRound(playerSelection, computerSelection){
 
     const rules = {'rock': 'paper', 'paper': 'scissors', 'scissors': 'rock'};
+    playerSelection = playerSelection.toLowerCase();
 
     if (computerSelection === rules[playerSelection]){
         // player lose
@@ -52,5 +53,21 @@ function game(){
     const winner = (playerScore > computerScore) ? 'Player Wins!' : 'Computer Wins!';
     console.log(winner);
 }
+
+// get all buttons
+const buttons = document.querySelectorAll("button");
+
+// add click event listener to play a single round to each button
+buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        
+        let playerSelection = btn.textContent;
+        let computerSelection = computerPlay();
+
+        let result = playSingleRound(playerSelection, computerSelection);
+
+        console.log(result);
+    });
+});
 
 // game();
