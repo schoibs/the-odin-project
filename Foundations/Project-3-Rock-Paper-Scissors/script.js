@@ -54,8 +54,10 @@ function game(){
     console.log(winner);
 }
 
-// get all buttons
-const buttons = document.querySelectorAll("button");
+
+const buttons = document.querySelectorAll("button"); // get all buttons
+const scoreText = document.querySelector(".score-text");
+const resultText = document.querySelector(".result-text");
 
 // add click event listener to play a single round to each button
 buttons.forEach((btn) => {
@@ -66,8 +68,12 @@ buttons.forEach((btn) => {
 
         let result = playSingleRound(playerSelection, computerSelection);
 
-        console.log(result);
+        resultText.textContent = result;
     });
 });
+
+
+scoreText.textContent = "Put score here!";
+
 
 // game();
