@@ -54,10 +54,18 @@ function game(){
     console.log(winner);
 }
 
+let roundNumber = 1;
+
+let playerScore = 0;
+let computerScore = 0;
 
 const buttons = document.querySelectorAll("button"); // get all buttons
+const roundText = document.querySelector(".round-text");
 const scoreText = document.querySelector(".score-text");
 const resultText = document.querySelector(".result-text");
+
+roundText.textContent = `Round ${roundNumber}`;
+scoreText.textContent = `Player ${playerScore} : ${computerScore} Computer`;
 
 // add click event listener to play a single round to each button
 buttons.forEach((btn) => {
@@ -67,13 +75,21 @@ buttons.forEach((btn) => {
         let computerSelection = computerPlay();
 
         let result = playSingleRound(playerSelection, computerSelection);
-
         resultText.textContent = result;
+
+        if(result.charAt(4) === 'W'){
+            playerScore++;
+        } else if(result.charAt(4) === 'L'){
+            computerScore++;
+        } else {
+            i--;
+        }
+
+        scoreText.textContent = `Player ${playerScore} : ${computerScore} Computer`;
+
+        roundNumber++;
+        roundText.textContent = `Round ${roundNumber}`;
     });
 });
-
-
-scoreText.textContent = "Put score here!";
-
 
 // game();
