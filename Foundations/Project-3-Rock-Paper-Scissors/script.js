@@ -25,6 +25,12 @@ function playSingleRound(playerSelection, computerSelection){
     }
 }
 
+function disableButton(){
+    buttons.forEach(btn => {
+        btn.disabled = true
+    })
+}
+
 function game(){
 
     let playerScore = 0;
@@ -81,14 +87,18 @@ buttons.forEach((btn) => {
             playerScore++;
         } else if(result.charAt(4) === 'L'){
             computerScore++;
-        } else {
-            i--;
         }
 
         scoreText.textContent = `Player ${playerScore} : ${computerScore} Computer`;
 
         roundNumber++;
         roundText.textContent = `Round ${roundNumber}`;
+
+        if (playerScore === 5 ){
+            disableButton();
+        } else if (computerScore === 5) {
+            disableButton();
+        }
     });
 });
 
