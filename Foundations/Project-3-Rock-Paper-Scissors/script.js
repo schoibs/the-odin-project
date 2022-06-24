@@ -31,41 +31,13 @@ function disableButton(){
     })
 }
 
-function game(){
-
-    let playerScore = 0;
-    let computerScore = 0;
-
-    for (let i=0; i<5; i++){
-
-        console.log(`Round ${i+1}`);
-
-        let playerSelection = prompt("Pick your poison: 'rock', 'paper' or 'scissors'.");
-        let computerSelection = computerPlay();
-
-        let message = playSingleRound(playerSelection, computerSelection);
-        
-        if(message.charAt(4) === 'W'){
-            playerScore++;
-        } else if(message.charAt(4) === 'L'){
-            computerScore++;
-        } else {
-            i--;
-        }
-
-        console.log(`${message} \nPlayer ${playerScore} : ${computerScore} Computer`);
-    }
-
-    const winner = (playerScore > computerScore) ? 'Player Wins!' : 'Computer Wins!';
-    console.log(winner);
-}
-
 let roundNumber = 1;
 
 let playerScore = 0;
 let computerScore = 0;
 
 const buttons = document.querySelectorAll("button"); // get all buttons
+
 const roundText = document.querySelector(".round-text");
 const scoreText = document.querySelector(".score-text");
 const resultText = document.querySelector(".result-text");
@@ -74,27 +46,33 @@ const winnerText = document.querySelector(".winner-text");
 roundText.textContent = `Round ${roundNumber}`;
 scoreText.textContent = `Player ${playerScore} : ${computerScore} Computer`;
 
-// add click event listener to play a single round to each button
+// for each button, add click event listener to play a single round
 buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
         
+        // get player and computer choices
         let playerSelection = btn.textContent;
         let computerSelection = computerPlay();
 
+        // display result
         let result = playSingleRound(playerSelection, computerSelection);
         resultText.textContent = result;
 
+        // increase score
         if(result.charAt(4) === 'W'){
             playerScore++;
         } else if(result.charAt(4) === 'L'){
             computerScore++;
         }
 
+        // display score
         scoreText.textContent = `Player ${playerScore} : ${computerScore} Computer`;
 
+        // display round
         roundNumber++;
         roundText.textContent = `Round ${roundNumber}`;
 
+        // if either's score reaches 5, disable buttons and display winning messages
         if (playerScore === 5 ){
             disableButton();
             winnerText.textContent = 'Player wins! Reload the page to restart.';
@@ -104,5 +82,3 @@ buttons.forEach((btn) => {
         }
     });
 });
-
-// game();
