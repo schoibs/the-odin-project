@@ -15,13 +15,13 @@ function playSingleRound(playerSelection, computerSelection){
 
     if (computerSelection === rules[playerSelection]){
         // player lose
-        return `You Lose! ${capitalize(computerSelection)} beats ${playerSelection}.`;
+        return `You Lose! ${capitalize(computerSelection)} beats ${capitalize(playerSelection)}.`;
     } else if (playerSelection === computerSelection){
         // tie
         return "Its a Tie!";
     } else {
         // player win
-        return `You Win! ${capitalize(playerSelection)} beats ${computerSelection}.`;
+        return `You Win! ${capitalize(playerSelection)} beats ${capitalize(computerSelection)}.`;
     }
 }
 
