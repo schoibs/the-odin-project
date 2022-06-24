@@ -41,15 +41,14 @@ body {
     font-size: 32px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
-}
-
-.score {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
 
-h5 {
+h4, 
+h5,
+h6 {
     margin: 0;
 }

@@ -69,6 +69,7 @@ const buttons = document.querySelectorAll("button"); // get all buttons
 const roundText = document.querySelector(".round-text");
 const scoreText = document.querySelector(".score-text");
 const resultText = document.querySelector(".result-text");
+const winnerText = document.querySelector(".winner-text");
 
 roundText.textContent = `Round ${roundNumber}`;
 scoreText.textContent = `Player ${playerScore} : ${computerScore} Computer`;
@@ -96,8 +97,10 @@ buttons.forEach((btn) => {
 
         if (playerScore === 5 ){
             disableButton();
+            winnerText.textContent = 'Player wins! Reload the page to restart.';
         } else if (computerScore === 5) {
             disableButton();
+            winnerText.textContent = 'Computer wins! Reload the page to restart.';
         }
     });
 });
