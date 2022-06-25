@@ -1,4 +1,4 @@
-const container = document.querySelector('.container');
+const gridContainer = document.querySelector('.grid');
 
 for (let i=0; i<16; i++){
 
@@ -12,10 +12,10 @@ for (let i=0; i<16; i++){
         lineDiv.appendChild(cellDiv);
     }
 
-    container.appendChild(lineDiv);
+    gridContainer.appendChild(lineDiv);
 }
 
-const colorInput = document.querySelector('input');
+const colorInput = document.querySelector('.color-picker');
 const cells = document.querySelectorAll('.cell');
 
 cells.forEach((cell) => {
