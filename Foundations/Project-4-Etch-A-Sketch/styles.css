@@ -9,6 +9,15 @@ body {
 .container {
     border-style: solid;
     border-width: 1px;
-    /* height: 500px;
-    width: 500px; */
+}
+
+.line {
+    display: flex;
+}
+
+.cell {
+    height: 30px; 
+    width: 30px; 
+    border-style: solid; 
+    border-width: 1px;
 }
