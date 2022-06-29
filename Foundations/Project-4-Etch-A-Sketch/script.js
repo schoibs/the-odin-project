@@ -53,17 +53,6 @@ eraserBtn.addEventListener('click', e => {
     
 });
 
-// making the rainbow button
-const rainbowBtn = document.querySelector('.rainbow-btn');
-
-rainbowBtn.addEventListener('click', e => {
-    if (e.target.style.backgroundColor === 'white' || e.target.style.backgroundColor === ''){
-        e.target.style.backgroundColor = 'rgb(255, 168, 168)';
-    } else {
-        e.target.style.backgroundColor = 'white';
-    }
-});
-
 // making the reset button
 const resetBtn = document.querySelector('.reset-btn');
 
