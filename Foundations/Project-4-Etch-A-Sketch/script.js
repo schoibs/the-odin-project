@@ -17,13 +17,6 @@ for (let i=0; i<16; i++){
     gridContainer.appendChild(lineDiv);
 }
 
-// making the grid size depends on slider value
-const gridSlider = document.querySelector('.grid-slider');
-
-gridSlider.addEventListener('mouseup', e => {
-    console.log("value of " + e.target.value);
-});
-
 // making the grid cells background colour match the colour picker value
 const colorInput = document.querySelector('.color-picker');
 const cells = document.querySelectorAll('.cell');
