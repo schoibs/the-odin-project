@@ -37,11 +37,15 @@ function operate(operation, num1, num2){
     
 }
 
+
 let firstOperand = 0;
 let operation = '';
 let secondOperand = 0;
 let listeningFor = 'first';
 
+
+const displayArea = document.querySelector('.display');
+displayArea.textContent = firstOperand;
 
 const numberButtons = document.querySelectorAll('.number-btn');
 numberButtons.forEach((button) => {
@@ -50,8 +54,10 @@ numberButtons.forEach((button) => {
 
         if (listeningFor === 'first'){
             firstOperand = +button.textContent;
+            displayArea.textContent = firstOperand;
         } else if (listeningFor === 'second'){
             secondOperand = +button.textContent;
+            displayArea.textContent = secondOperand;
         }
 
     });
@@ -85,9 +91,10 @@ equalButton.addEventListener('click', () => {
 
 
 const clearButton = document.querySelector('#clear-btn');
-equalButton.addEventListener('click', () => {
+clearButton.addEventListener('click', () => {
     firstOperand = 0;
     operation = '';
     secondOperand = 0;
     listeningFor = 'first';
+    displayArea.textContent = firstOperand;
 });
