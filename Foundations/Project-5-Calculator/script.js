@@ -31,10 +31,14 @@ function operate(operation, num1, num2){
         case 'divide':
             ans = divide(num1, num2);
             if (ans === Infinity)
-                return "Can't divide by zero, idiot!"
+                return "Can't divide by zero, idiot!";
             break;
     }
 
+    if (isNaN(ans)){
+        return "Invalid Operation!";
+    }
+    
     // round to two decimal places if necessary
     return Math.round((ans + Number.EPSILON) * 100) / 100; 
 }
