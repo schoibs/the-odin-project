@@ -62,8 +62,8 @@ numberButtons.forEach((button) => {
 });
 
 
-const opeartionButtons = document.querySelectorAll('.operation-btn');
-opeartionButtons.forEach((button) => {
+const operationButtons = document.querySelectorAll('.operation-btn');
+operationButtons.forEach((button) => {
 
     button.addEventListener('click', () => {
         // when user click operation button, store content as first operand
