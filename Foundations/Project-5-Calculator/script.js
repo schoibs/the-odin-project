@@ -42,17 +42,21 @@ function operate(operation, num1, num2){
 
 const displayArea = document.querySelector('.display');
 
+
 // reset the application
 let firstOperand = 0;
 let operation = '';
 let secondOperand = 0;
-displayArea.textContent = firstOperand;
+let content = '0';  // placeholder for storing display content
+displayArea.textContent = firstOperand; // at the beginning, display the first operand which is zero
 
 const numberButtons = document.querySelectorAll('.number-btn');
 numberButtons.forEach((button) => {
 
     button.addEventListener('click', () => {
-        displayArea.textContent = +button.textContent;
+        // display content
+        content = content + button.textContent;
+        displayArea.textContent = +content;
     });
 
 });
@@ -62,6 +66,7 @@ const opeartionButtons = document.querySelectorAll('.operation-btn');
 opeartionButtons.forEach((button) => {
 
     button.addEventListener('click', () => {
+        // when user click operation button, store content as first operand
         firstOperand = +displayArea.textContent;
 
         if (button.textContent === '+'){
@@ -73,6 +78,9 @@ opeartionButtons.forEach((button) => {
         } else if (button.textContent === '/'){
             operation = 'divide';
         }
+
+        // reset content before getting second operand
+        content = '0';
     });
 
 });
@@ -80,11 +88,15 @@ opeartionButtons.forEach((button) => {
 
 const equalButton = document.querySelector('#equal-btn');
 equalButton.addEventListener('click', () => {
-
+    // when user click equal button, store content as second operand
     secondOperand = +displayArea.textContent;
 
+    // display answer
     const answer = operate(operation, firstOperand, secondOperand);
     displayArea.textContent = answer;
+
+    // reset content after calculating answer
+    content = '0';
 });
 
 
@@ -94,5 +106,6 @@ clearButton.addEventListener('click', () => {
     firstOperand = 0;
     operation = '';
     secondOperand = 0;
+    content = '0';
     displayArea.textContent = firstOperand;
 });
