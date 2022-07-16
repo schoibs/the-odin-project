@@ -68,9 +68,12 @@ operationButtons.forEach((button) => {
     button.addEventListener('click', () => {
 
         if (operands[0] !== null && operation !== null){
-
+            // when user click operation button, 
+            // check if first operand and operation method has already been set.
+            // if true, store content as second operand
             operands[1] = (+displayArea.textContent);
 
+            // display answer
             answer = operate(operation, operands[0], operands[1]);
             displayArea.textContent = answer;
         }
@@ -104,6 +107,7 @@ equalButton.addEventListener('click', () => {
     answer = operate(operation, operands[0], operands[1]);
     displayArea.textContent = answer;
 
+    // reset operation method
     operation = null;
 
     // reset content after calculating answer
