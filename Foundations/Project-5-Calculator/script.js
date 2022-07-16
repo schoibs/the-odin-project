@@ -44,11 +44,11 @@ const displayArea = document.querySelector('.display');
 
 
 // reset the application
-let firstOperand = 0;
-let operation = '';
-let secondOperand = 0;
+let operands = [null, null];
+let answer = null;
+let operation = null;
 let content = '0';  // placeholder for storing display content
-displayArea.textContent = firstOperand; // at the beginning, display the first operand which is zero
+displayArea.textContent = 0; // at the beginning, display the first operand which is zero
 
 const numberButtons = document.querySelectorAll('.number-btn');
 numberButtons.forEach((button) => {
@@ -66,8 +66,17 @@ const operationButtons = document.querySelectorAll('.operation-btn');
 operationButtons.forEach((button) => {
 
     button.addEventListener('click', () => {
+
+        if (operands[0] !== null && operation !== null){
+
+            operands[1] = (+displayArea.textContent);
+
+            answer = operate(operation, operands[0], operands[1]);
+            displayArea.textContent = answer;
+        }
+
         // when user click operation button, store content as first operand
-        firstOperand = +displayArea.textContent;
+        operands[0] = (+displayArea.textContent);
 
         if (button.textContent === '+'){
             operation = 'add';
@@ -89,11 +98,13 @@ operationButtons.forEach((button) => {
 const equalButton = document.querySelector('#equal-btn');
 equalButton.addEventListener('click', () => {
     // when user click equal button, store content as second operand
-    secondOperand = +displayArea.textContent;
+    operands[1] = (+displayArea.textContent);
 
     // display answer
-    const answer = operate(operation, firstOperand, secondOperand);
+    answer = operate(operation, operands[0], operands[1]);
     displayArea.textContent = answer;
+
+    operation = null;
 
     // reset content after calculating answer
     content = '0';
@@ -103,9 +114,10 @@ equalButton.addEventListener('click', () => {
 const clearButton = document.querySelector('#clear-btn');
 clearButton.addEventListener('click', () => {
     // reset the application
-    firstOperand = 0;
-    operation = '';
-    secondOperand = 0;
+    operands[0] = null;
+    operands[1] = null;
+    answer = null;
+    operation = null;
     content = '0';
-    displayArea.textContent = firstOperand;
+    displayArea.textContent = 0;
 });
