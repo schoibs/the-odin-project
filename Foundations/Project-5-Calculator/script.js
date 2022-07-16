@@ -85,7 +85,8 @@ opeartionButtons.forEach((button) => {
 
 const equalButton = document.querySelector('#equal-btn');
 equalButton.addEventListener('click', () => {
-    console.log(firstOperand, operation, secondOperand);
+    let answer = operate(operation, firstOperand, secondOperand);
+    displayArea.textContent = answer;
     listeningFor = 'first';
 });
 
